@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".mood.MoodFragment">
+
+    <data>
+        <variable
+            name="moodViewModel"
+            type="com.example.emotiontracking.mood.MoodViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D1D1D1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="30dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/how_do_you_feel"
+            android:textAllCaps="false"
+            android:textColor="#2B2B2B"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold|italic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/emotion_0"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> moodViewModel.makeAMoodSelection(0)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/angry" />
+
+            <ImageButton
+                android:id="@+id/emotion_1"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> moodViewModel.makeAMoodSelection(1)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/crying" />
+
+            <ImageButton
+                android:id="@+id/emotion_2"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> moodViewModel.makeAMoodSelection(2)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flushed" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/emotion_3"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> moodViewModel.makeAMoodSelection(3)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/full" />
+
+            <ImageButton
+                android:id="@+id/emotion_4"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> moodViewModel.makeAMoodSelection(4)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/screaming" />
+
+            <ImageButton
+                android:id="@+id/emotion_5"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> moodViewModel.makeAMoodSelection(5)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sleeping" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/emotion_6"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> moodViewModel.makeAMoodSelection(6)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/smiling" />
+
+            <ImageButton
+                android:id="@+id/emotion_7"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> moodViewModel.makeAMoodSelection(7)}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/thinking" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Emotion Tracker</string>
+
+    <string name="toast">All your data has been completely deleted.</string>
+    <string name="how_do_you_feel">How did you feel during the selected time?</string>
+    <string name="angry">Angry</string>
+    <string name="tearful">Tearful</string>
+    <string name="flushed">Flushed</string>
+    <string name="full">Full</string>
+    <string name="screaming_scared">Screaming or Scared</string>
+    <string name="sleepy">Sleepy</string>
+    <string name="happy">Happy</string>
+    <string name="pensive">Pensive</string>
+
+    <string name="header">MOOD DATA</string>
+    <string name="title"><![CDATA[<h3>HERE IS YOUR MOOD DATA</h3>]]></string>
+    <string name="start_time"><![CDATA[<b>Start:</b>]]></string>
+    <string name="end_time"><![CDATA[<b>Finish:</b>]]></string>
+    <string name="emotion"><![CDATA[<b>Emotion:</b>]]></string>
+    <string name="emotion_time"><![CDATA[<b>Hour: Minute: Second:</b>]]></string>
+
+    <string name="clear">CLEAR</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+
+    <string name="minute_length">%d minutes on %s</string>
+    <string name="second_length">%d seconds on %s</string>
+    <string name="hour_length">%d o clock on %s</string>
+    <string name="delete">DELETE</string>
+    <string name="close">CLOSE</string>
+    <string name="back">BACK</string>
+    <string name="deleted">All your data has been completely deleted.</string>
+
+
+</resources>

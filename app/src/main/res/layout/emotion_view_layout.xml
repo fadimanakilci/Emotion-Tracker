@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+EmotionViewAdapter dosyasına yeni yazılan kod sayesinde boşluk ile ayırdığımız kodları ekleyebildik.
+DataBinding işlemleri yapabilmemiz için ise CardView ı layout tagları içerisine aldık
+-->
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="emotionV"
+            type="com.example.emotiontracking.database.Mood" />
+        <variable
+            name="clickTracking"
+            type="com.example.emotiontracking.emotiontracker.ClickTracker" />
+    </data>
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#B8B8B8"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+    
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{() -> clickTracking.clicked(emotionV)}">
+    
+            <ImageView
+                android:id="@+id/emotion_image"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_margin="@dimen/margin"
+                android:contentDescription="@string/app_name"
+
+                app:emotionIcon="@{emotionV}"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/smiling"/>
+    
+            <TextView
+                android:id="@+id/emotion_time"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+
+                app:emotionTime="@{emotionV}"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/emotion_image"
+                app:layout_constraintTop_toTopOf="@id/emotion_image"
+                tools:text="Wednesday"
+                android:layout_marginLeft="8dp" />
+    
+            <TextView
+                android:id="@+id/feeling"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+
+                app:mood="@{emotionV}"
+
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="@id/emotion_time"
+                app:layout_constraintStart_toStartOf="@id/emotion_time"
+                app:layout_constraintTop_toBottomOf="@id/emotion_time"
+                tools:text="@string/pensive"/>
+    
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    </androidx.cardview.widget.CardView>
+</layout>

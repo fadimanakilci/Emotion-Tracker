@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+    TextView ların içerisindeki app:değişken_adı olan yerlerdek
+    değişken adları ConnectionUtil dosyasındaki BindingAdapter value ları
+    -->
+
+    <data>
+
+        <variable
+            name="emotionDetailViewModel"
+            type="com.example.emotiontracking.emotiondetail.EmotionDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding"
+        tools:context=".emotiondetail.EmotionDetailFragment"
+        android:background="#D1D1D1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#404040"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold|italic"
+            app:mood="@{emotionDetailViewModel.mood}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginBottom="@dimen/margin_top"
+            android:textSize="@dimen/question_text_size"
+            android:textColor="#4C4C4C"
+            android:textStyle="bold|italic"
+            app:emotionTime="@{emotionDetailViewModel.mood}" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginBottom="@dimen/margin_top"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            app:emotionIcon="@{emotionDetailViewModel.mood}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_top">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="@{() -> emotionDetailViewModel.orientationClicked()}"
+                android:text="@string/back"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="@{() -> emotionDetailViewModel.deleteMood()}"
+                android:text="@string/delete"
+                android:textColor="@color/black"
+                android:textSize="@dimen/question_text_size"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

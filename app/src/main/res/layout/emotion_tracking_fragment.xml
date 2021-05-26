@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="emotionTrackingViewModel"
+            type="com.example.emotiontracking.emotiontracker.EmotionTrackingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D1D1D1"
+        tools:context=".emotiontracker.EmotionTrackingFragment">
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="@{() -> emotionTrackingViewModel.deleteAllData()}"
+            android:enabled="@{emotionTrackingViewModel.displayTheClearButton}"
+            android:text="@string/clear"
+            android:textColor="#000000"
+            android:textSize="@dimen/question_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:onClick="@{() -> emotionTrackingViewModel.startEmotionTracking()}"
+            android:enabled="@{emotionTrackingViewModel.displayTheStartButton}"
+            android:text="@string/start"
+            android:textColor="#000000"
+            android:textSize="@dimen/question_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/stop"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="40dp"
+            android:enabled="@{emotionTrackingViewModel.displayTheStopButton}"
+            android:onClick="@{() -> emotionTrackingViewModel.stopEmotionTracking()}"
+            android:text="@string/stop"
+            android:textColor="#000000"
+            android:textSize="@dimen/question_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+<!--
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/clear"
+            app:layout_constraintTop_toBottomOf="@+id/start"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{emotionTrackingViewModel.emotionsString}" />
+        </ScrollView>
+-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/emotion_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/clear"
+            app:layout_constraintTop_toBottomOf="@+id/start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
